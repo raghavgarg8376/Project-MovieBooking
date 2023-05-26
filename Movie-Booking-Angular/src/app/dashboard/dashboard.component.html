@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="navbar" color="primary">
+    <div class="navbar-left">
+      <mat-icon>menu</mat-icon>
+    </div>
+    <span class="dashboard-title">Movie Dashboard</span>
+    <div class="search-container">
+      <input type="text" id="input" [(ngModel)]="searchQuery" placeholder="Search movies">
+      <button id="serBut" (click)="searchMovies()">Search</button>
+    </div>
+    <div *ngIf="!LoggedIn()" class="navbar-right ">
+      <a class="loginClass" routerLink="">Login</a>
+      <a class="loginClass" routerLink="/register">Register</a>
+    </div>
+    <div *ngIf="LoggedIn()" class="navbar-right ">
+
+      <a> Hi {{userName}} </a>
+      <a class="loginClass" (click)="Logout()">Logout</a>
+    </div>
+
+  </div>
+
+  <div>
+    <div *ngIf="LoggedIn() && Admin()">
+      <button id="addBut" class="book" routerLink="/addmovie">Add movie</button>
+    </div>
+    <div class="dashboard-container">
+      <div class="movies-container ">
+        <div *ngFor="let movie of fetch" class="movie-card movie">
+          <h2>{{ movie.movieName }}</h2>
+          <div *ngIf="LoggedIn() && Admin()">
+            <button id="delBut" (click)="deleteMovies(movie.movieName)">Delete Movie</button>
+          </div>
+          <div *ngFor="let theater of movie.theaterName" class="theater ">
+            <h4 id="thName" class="moviename"><b>{{ theater.theaterName }}</b></h4>
+            <img
+              src="https://img.freepik.com/premium-vector/cinema-tickets-movie-cinema-ticket-icon-cardboard-pair-tickets-entertainment-show_124894-358.jpg?w=2000"
+              alt="Avatar" style="width:100%">
+            <h3 id="avalSeats" class="moviename">Available Seats:{{ theater.seats-theater.bookedSeats }}</h3>
+            <div *ngIf="LoggedIn() && !Admin()">
+              <button id="update1" class="book" routerLink="/movie/{{movie.movieName}}/{{theater.theaterName}}">Book
+                Now</button>
+            </div>
+            <div *ngIf="LoggedIn() && Admin()">
+              <button id="update" class="book"
+                routerLink="/movie/{{movie.movieName}}/{{theater.theaterName}}"><b>Update</b></button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

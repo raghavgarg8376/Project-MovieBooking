@@ -1,0 +1,58 @@
+<br>
+<br>
+<div class="container">
+
+    <form #Registerform="ngForm">
+    <div id="div1" class="form-group row">
+        <label for="Loginid" class="col-sm-2 col-form-label">Login Id:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input type="text" class="form-control" id="login" name="login" placeholder="id" (focusout)="chkLoginId()" [(ngModel)]="model1.login">
+        <div class="col-sm-3">
+            <small class="text-danger">{{errloginid}}</small>
+            <small class="text-success">{{Oklogin}}</small>
+        </div>  
+    </div>
+    <br>
+    <div id="div2" class="form-group row">
+        <label for="Firstname" class="col-sm-2 col-form-label">First Name:</label>
+        <input type="text" class="form-control" id="firstName" placeholder="First Name" name="firstName" [(ngModel)]="model1.firstName">
+    </div>
+    <br>
+    <div id="div3" class="form-group row">
+        <label for="Lastname" class="col-sm-2 col-form-label">Last Name:</label>
+        <input type="text" class="form-control" id="lastName" placeholder="Last Name" name="lastName" [(ngModel)]="model1.lastName">
+    </div>
+    <br>
+    <div id="div4" class="form-group row">
+        <label for="Email" class="col-sm-2 col-form-label">Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input type="email" class="form-control" id="email" (focusout)="chkEmail()" placeholder="Email" name="email" [(ngModel)]="model1.email">
+        <div class="col-sm-3">
+            <small class="text-danger">{{erremail}}</small>
+            <small class="text-success">{{okemail}}</small>
+        </div>
+    </div>
+    <br>
+    <div id="div5" class="form-group row">
+        <label for="Phonenumber" class="col-sm-2 col-form-label">Phone No:&nbsp;&nbsp;&nbsp;</label>
+        <input type="text" class="form-control" id="contactNumber" name="contactNumber" (focusout)="chkphn()" placeholder="Phone No." [(ngModel)]="model1.contactNumber">
+        <div class="col-sm-3"><small class="text-danger">{{phnchk}}</small></div>
+    </div>
+    <br>
+    <div id="div6" class="form-group row">
+        <label for="Password" class="col-sm-2 col-form-label">Password:&nbsp;&nbsp;&nbsp;</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password" [(ngModel)]="model1.password">
+    </div>
+    <br>
+    <div id="div7"  class="form-control-row">
+        Already a user? &nbsp;<small class="text-success" id="logintxt" (click)="OpenLogin()">Login Here</small>
+    </div>
+    <br>
+    <div class="from-group row">
+        <div class="col-sm-4"></div>
+        <div class="form-group row col-sm-2">
+            <input type="button" id="RegisterBtn" class="btn btn-primary" value="register" (click)="register()">
+        </div>
+    </div>
+ </form>
+
+</div>
+

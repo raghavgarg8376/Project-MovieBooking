@@ -1,0 +1,64 @@
+<nav class="container">
+  <div class="navbar-left">
+    <mat-icon >menu</mat-icon>
+  </div>
+  <span class="dashboard-title">Movie Ticket Booking</span>
+  <div *ngIf="LoggedIn()" class="navbar-right " >
+      
+    <a> Hi {{userName}} </a>
+    <a class="loginClass" (click)="Logout()" >Logout</a>
+  </div>
+</nav>
+
+  <form *ngIf="LoggedIn() && !Admin()" [formGroup]="editdata" (ngSubmit)="submitForm()">
+  <div id="div-out">    
+    <div id="div1">
+        <label for="movieName">MovieName &nbsp; &nbsp; &nbsp;</label>
+        <input type="text" id="movieName" [(ngModel)]="tickets.movieName" name="movieName" formControlName="movieName" required readonly> 
+    </div>
+    <div id="div2">
+        <label for="theaterName">TheaterName &nbsp; &nbsp;</label>
+        <input type="text" id="theaterName"  [(ngModel)]="tickets.theaterName" name="theaterName" formControlName="theaterName" required readonly> 
+    </div>
+    <div id="div3">
+        <label for="timeSlot">Time Slot &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label>
+        <input type="text" id="timeSlot" [(ngModel)]="tickets.timeSlot" name="timeSlot" formControlName="timeSlot" required readonly> 
+    </div>
+    <div id="div4">
+        <label for="noOfSeats">Available Seats &nbsp;</label>
+        <input type="text" id="noOfSeats" [(ngModel)]="tickets.noOfSeats" name="noOfSeats" formControlName="noOfSeats" required> 
+    </div>
+    <div id="div4" >
+      <label for="bookingForDate">Booking Date&nbsp; &nbsp;</label>
+      <input type="String" [(ngModel)]="tickets.bookingForDate" id="bookingForDate" name="bookingForDate" formControlName="bookingForDate" placeholder="Booking Date"  required> 
+  </div>
+  
+    <button type="submit">Book</button>
+  </div>
+</form>
+<form *ngIf="LoggedIn() && Admin()" [formGroup]="editdata" (ngSubmit)="UpdateForm()">
+  <div id="div-out">    
+    <div id="div1">
+        <label for="movieName">MovieName &nbsp; &nbsp; &nbsp;</label>
+        <input type="text" id="movieName" [(ngModel)]="tickets.movieName" name="movieName" formControlName="movieName" required readonly> 
+    </div>
+    <div id="div2">
+        <label for="theaterName">TheaterName &nbsp; &nbsp;</label>
+        <input type="text" id="theaterName"  [(ngModel)]="tickets.theaterName" name="theaterName" formControlName="theaterName" required readonly> 
+    </div>
+    <div id="div3">
+        <label for="timeSlot">Time Slot &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label>
+        <input type="text" id="timeSlot" [(ngModel)]="tickets.timeSlot" name="timeSlot" formControlName="timeSlot" required readonly> 
+    </div>
+    <div id="div4">
+        <label for="noOfSeats">No of Seats &nbsp; &nbsp; &nbsp;</label>
+        <input type="text" id="noOfSeats" [(ngModel)]="tickets.noOfSeats" name="noOfSeats" formControlName="noOfSeats" required> 
+    </div>
+    <div id="div4" >
+      <label for="bookingForDate">Release Date&nbsp; &nbsp;</label>
+      <input type="String" [(ngModel)]="tickets.bookingForDate" id="bookingForDate" name="bookingForDate" formControlName="bookingForDate" placeholder="Booking Date"  required readonly> 
+  </div>
+  
+    <button type="submit">Book</button>
+  </div>
+</form>

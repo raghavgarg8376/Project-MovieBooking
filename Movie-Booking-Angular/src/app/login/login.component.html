@@ -1,0 +1,49 @@
+
+<!-- Component Body -->
+<div class="heading">
+	<h1> Movie Booking<br> System</h1>
+	</div>
+	<img class="wave" src="https://img.freepik.com/free-vector/site-stats-concept-illustration_114360-1509.jpg?w=740&t=st=1656262449~exp=1656263049~hmac=302a99db4f5771e9c57996f12de7cf42b08070d2e58a4d0908bdb44cf0b49913">
+	<div class="container">
+
+		<div class="img">
+		</div>
+		<div class="login-content">
+			<form class="box" autocomplete="off" (ngSubmit)="LoginUser()">
+				<img src="https://img.freepik.com/free-vector/character-illustration-people-holding-user-account-icons_53876-43022.jpg?t=st=1656269563~exp=1656270163~hmac=c8963138da8aa42b5dbaf2dff0ac0927368b07dac1e18b3cd3ad9992a59a79c9&w=900">
+				<br><br><br>
+
+				<!--UserName-->
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+                        <input type="text" [(ngModel)]="model1.login" name="username" placeholder="Username" class="input" required>
+           		   </div>
+           		</div>
+
+				<!--Password-->
+           		<div class="input-div pass">
+           		   <div class="i">
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<input type="password" [(ngModel)]="model1.password" name="password" placeholder="Password" class="input" required>
+            	   </div>
+            	</div>
+				
+                   <span>  <small  routerLink="forgotpassword" >Forgot your Password?</small></span>
+                
+				<!--Submit Button-->
+             	<input type="submit" class="btn btn-info lastbtn" name="" value="Login">
+                 <div class="form-control-row">
+                    Not a Registered User? <small class="text-success" id="registertxt" (click)="OpenRegister()">Register Here</small>
+                </div>
+            </form>
+
+			
+		</div>
+        
+		
+    </div>

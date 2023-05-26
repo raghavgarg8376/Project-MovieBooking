@@ -1,0 +1,53 @@
+<nav class="container">
+    <div class="navbar-left">
+        <mat-icon>menu</mat-icon>
+    </div>
+    <span class="dashboard-title">Create Movie Details</span>
+    <div *ngIf="LoggedIn()" class="navbar-right ">
+
+        <a> Hi {{userName}} </a>
+        <a class="loginClass" (click)="Logout()">Logout</a>
+    </div>
+</nav>
+<form (ngSubmit)="submitForm()">
+    <div id="div-out">
+        <div>
+            <label for="movieName">Movie Name:&nbsp;&nbsp;</label>
+            <input type="text" id="movieName" name="movieName" [(ngModel)]="movies.movieName" required>
+        </div>
+        <div *ngFor="let theater of theaters; let i=index">
+            <h3>Theater{{i+1}}</h3>
+            <table>
+                <tr>
+                    <td><label for="theaterName{{i}}">Theater Name:&nbsp;&nbsp;</label></td>
+                    <td><input type="text" id="theaterName{{i}}" name="theaterName{{i}}"
+                            [(ngModel)]="theater.theaterName" required></td>
+                </tr>
+                <tr>
+                    <td><label for="seats{{i}}">Seats:</label></td>
+                    <td><input type="number" id="seats{{i}}" name="seats{{i}}" [(ngModel)]="theater.seats" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="slots{{i}}">Slots</label></td>
+                    <td><input type="text" id="slots{{i}}" name="slots{{i}}" [(ngModel)]="theater.slots" required></td>
+                </tr>
+                <tr>
+                    <td><label for="bookedSeats{{i}}">Booked Seats</label></td>
+                    <td><input type="number" id="bookedSeats{{i}}" name="bookedSeats{{i}}"
+                            [(ngModel)]="theater.bookedSeats" required></td>
+                </tr>
+                <tr>
+                    <td><label for="releaseDate{{i}}">Release Date</label></td>
+                    <td><input type="text" id="releaseDate{{i}}" name="releaseDate{{i}}"
+                            [(ngModel)]="theater.releaseDate" required></td>
+                </tr>
+            </table>
+        </div>
+        <div id="theaters">
+            <button type="button" (click)="addTheater()">Add Theater</button>
+            <button type="button" (click)="removeTheater()">Remove Theater</button>
+            <button type="submit">Submit</button>
+        </div>
+    </div>
+</form>

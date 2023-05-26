@@ -1,0 +1,187 @@
+.navbar {
+  background-image: linear-gradient(to bottom, #33ccff 0%, #0B539F 100%);
+  background-size: 200%;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  color: #f2f2f2;
+}
+
+.loginClass {
+  margin-left: 10px;
+  color: white;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  color: #f2f2f2;
+
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+}
+
+.nav-links li {
+  justify-items: end;
+  margin-left: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-links li a:hover {
+  color: white;
+}
+
+/* movie-page.component.css */
+.dashboard-container {
+  background-image: linear-gradient(rgba(25, 34, 37, 0.5), rgba(21, 29, 32, 0.5)), url("https://repository-images.githubusercontent.com/201763429/30616780-bd1a-11e9-840c-edafb61c8f99");
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 20px;
+}
+
+.dashboard-title {
+  text-align: center;
+  color: #f2f2f2;
+  font-size: 30px;
+}
+
+.movies-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movie-card {
+  width: 910px;
+  border: 1px solid white;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  margin-left: 10%;
+}
+
+.movie {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  font-family: Roboto, sans-serif;
+  letter-spacing: .0178571429em;
+}
+
+.theater-container {
+  margin-top: 15px;
+}
+
+.container {
+  background-color: black;
+}
+
+.theater {
+  padding: 10px;
+  background-color: white;
+  margin-bottom: 10px;
+  height: 340px;
+  width: 242px;
+  display: inline-block;
+  margin-left: 20px;
+  margin-top: 30px;
+  border-radius: 7px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+h3 {
+  margin-bottom: 5px;
+}
+
+.book {
+  display: inline;
+  margin-top: 10px;
+  float: right;
+  color: red;
+}
+
+.moviename {
+  display: inline;
+  float: left;
+
+}
+
+#avalSeats {
+  padding-top: 15px;
+}
+
+#update {
+  background-color: rgb(93, 165, 243);
+  border: 1px solid black;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#update1 {
+  background-color: rgb(93, 165, 243);
+  border: 1px solid black;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+h2 {
+  color: white;
+  margin-left: 390px;
+}
+
+#thName {
+  padding-left: 38%;
+}
+
+#delBut {
+  background-color: rgb(244, 102, 102);
+  border-radius: 4px;
+  border: 1px solid white;
+  color: white;
+  padding: 10px 20px;
+  margin-left: 770px;
+  cursor: pointer;
+}
+
+#addBut {
+  background-color: rgb(175, 76, 242);
+  border-radius: 4px;
+  border: 1px solid white;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#serBut {
+  background-color: rgb(128, 215, 245);
+  border-radius: 4px;
+  border: 1px solid white;
+  color: white;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+#input {
+  width: 200px;
+  height: 30px;
+  border: 0px;
+  border-radius: 4px;
+  margin-right: 5px;
+}
